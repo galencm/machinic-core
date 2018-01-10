@@ -9,27 +9,27 @@
         <ignore_check>gphoto2</ignore_check>
         <argument>bridge</argument>
     </include>
-    <include file="bridge.py" name="bridge-watch" rpc="false">
-        <argument>reactor</argument>
+    <include file="bridge.py" name="bridge-watch" rpc="false"  wireup="true">
+        <argument value="reactor" />
     </include>
-    <include file="tools.py" name="tools" />
-    <include file="redis.hcl"/>
-    <include file="mqtt.hcl"/>
-    <include file="associative.py" connect_args="false"
+    <include file="tools.py" name="tools" wireup="true" />
+    <include file="redis.hcl" wireup="true" />
+    <include file="mqtt.hcl" wireup="true" />
+    <include file="associative.py" wireup="false"
       rpc="false">
-        <argument alias="scan_iface"/>
-        <argument>--config</argument>
-        <argument>default.yaml</argument>
-        <argument>--ap-ssid</argument>
-        <argument alias="ap_ssid"/>
-        <argument>--ap-pass</argument>
-        <argument alias="ap_pass"/>
+        <argument alias="scan_iface" />
+        <argument value="--config" />
+        <argument value="default.yaml" />
+        <argument value="--ap-ssid" />
+        <argument alias="ap_ssid" />
+        <argument value="--ap-pass" />
+        <argument alias="ap_pass" />
     </include>
-    <include file="create-ap" rpc="false" connect_args="false" location="path">
+    <include file="create-ap" location="path">
         <argument alias="ap_iface" />
-        <argument>-n</argument>
-        <argument alias="ap_ssid"/>
-        <argument alias="ap_pass"/>
-        <argument>--no-virt</argument>
+        <argument value="-n" />
+        <argument alias="ap_ssid" />
+        <argument alias="ap_pass" />
+        <argument value="--no-virt" />
     </include>
 </machine>

@@ -1,35 +1,35 @@
-<?xml version="1.0"?>
-<machine description="core machine" version="0.001">
-    <alias name="scanning_interface" alias="scan_iface" value="wlp0s29f7u2"/>
-    <alias name="accesspoint_interface" alias="ap_iface" value="wlp0s26f7u1"/>
-    <alias name="accesspoint_password" alias="ap_pass" value="f00_bar_baz"/>
-    <alias name="accesspoint_ssid" alias="ap_ssid" value="foo"/>
+<?xml version = "1.0"?>
+<machine description = "core machine">
+    <alias name = "scanning_interface" alias = "scan_iface" value = "wlp0s29f7u2"/>
+    <alias name = "accesspoint_interface" alias = "ap_iface" value = "wlp0s26f7u1"/>
+    <alias name = "accesspoint_password" alias = "ap_pass" value = "f00_bar_baz"/>
+    <alias name = "accesspoint_ssid" alias = "ap_ssid" value = "foo"/>
 
-    <include file="bridge.py" name="bridge" duplicates="false" rpc="false">
+    <include file = "bridge.py" name = "bridge" duplicates = "false" rpc = "false">
         <ignore_check>gphoto2</ignore_check>
-        <argument>bridge</argument>
+        <argument value = "bridge" />
     </include>
-    <include file="bridge.py" name="bridge-watch" rpc="false"  wireup="true">
-        <argument value="reactor" />
+    <include file = "bridge.py" name = "bridge-watch" wireup="true">
+        <argument value = "reactor" />
     </include>
-    <include file="tools.py" name="tools" wireup="true" />
-    <include file="redis.hcl" wireup="true" />
-    <include file="mqtt.hcl" wireup="true" />
-    <include file="associative.py" wireup="false"
-      rpc="false">
-        <argument alias="scan_iface" />
-        <argument value="--config" />
-        <argument value="default.yaml" />
-        <argument value="--ap-ssid" />
-        <argument alias="ap_ssid" />
-        <argument value="--ap-pass" />
-        <argument alias="ap_pass" />
+    <include file = "tools.py" name = "tools" rpc = "true" wireup = "true" />
+    <include file = "redis.hcl" wireup = "true" />
+    <include file = "mqtt.hcl" wireup = "true" />
+    <include file = "associative.py" wireup = "false"
+      rpc = "false">
+        <argument alias = "scan_iface" />
+        <argument value = "--config" />
+        <argument value = "default.yaml" />
+        <argument value = "--ap-ssid" />
+        <argument alias = "ap_ssid" />
+        <argument value = "--ap-pass" />
+        <argument alias = "ap_pass" />
     </include>
-    <include file="create-ap" location="path">
-        <argument alias="ap_iface" />
-        <argument value="-n" />
-        <argument alias="ap_ssid" />
-        <argument alias="ap_pass" />
-        <argument value="--no-virt" />
+    <include file = "create_ap" location="path">
+        <argument alias = "ap_iface" />
+        <argument value = "-n" />
+        <argument alias = "ap_ssid" />
+        <argument alias = "ap_pass" />
+        <argument value = "--no-virt" />
     </include>
 </machine>

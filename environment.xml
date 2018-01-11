@@ -18,7 +18,7 @@
     <include name="textX" system="python3" />
     <include name="paho.mqtt" system="python3" />
     <include name="netifaces" system="python3" />
-
+    <include name="lings" url="https://github.com/galencm/machinic-lings/zipball/master" system="python3" />
     <!-- linux_x86_64 
         x86_64 
         linux_amd64 

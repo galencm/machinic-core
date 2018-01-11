@@ -15,4 +15,5 @@ ok pip3 Jinja2
 ok pip3 textX
 ok pip3 paho.mqtt
 ok pip3 netifaces
+pip3 install https://github.com/galencm/machinic-lings/zipball/master
 

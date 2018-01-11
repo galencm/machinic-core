@@ -9,8 +9,8 @@
 #     received...
 import sys
 sys.path.insert(0,"../")
-import routeling
-import routeling_basic_operations
+from lings import routeling
+from lings import routeling_basic_operations
 #zerorpc-tools has echo...
 import local_tools
 import threading

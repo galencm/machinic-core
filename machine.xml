@@ -6,7 +6,6 @@
     <alias name = "accesspoint_ssid" alias = "ap_ssid" value = "foo"/>
 
     <include file = "bridge.py" name = "bridge" duplicates = "false" rpc = "false">
-        <ignore_check>gphoto2</ignore_check>
         <argument value = "bridge" />
     </include>
     <include file = "bridge.py" name = "bridge-watch" wireup="true">

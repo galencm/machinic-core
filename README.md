@@ -15,21 +15,28 @@ The core machine provides necessary **routing**, **interconnectivity** and **sta
 * State:
     * Redis 
 
-## <a name="quickstart"></a> Quickstart
-**Consul & nomad must be running**
+## Quickstart
+* Consul & nomad must be running
+* see [machinic-env](https://github.com/galencm/machinic-env) for setup scripts
 
-**Check firewall rules**
+clone repos:
+```
+git clone https://github.com/galencm/machinic-core
+git clone https://github.com/galencm/ma
+```
+use ma/machinic to generate start/stop scripts:
+```
+cd ma/machinic
+python3 machine.py generate --name machine_core --file ~/machinic-core/machine.yaml
+```
+run start script and tests:
+```
+cd ~/machinic-core
+./start.sh
+pytest -v
+```
 
-<a name="quickstart"></a> 
-`./ma ./machine_core/ ./machine_core/machine.xml`
-
-## <a name="test"></a> Testing
-
-`cd ./machine_core/examples`
-
-`python3 routing_example.py`
-
-##  <a name="contribute"></a> Contributing
+## Contributing
 
 This project uses the C4 process 
 

@@ -10,25 +10,27 @@ aliases:
 
 includes:
  - bridge.py:
-    duplicates: False
-    rpc: False
+    allow-duplicates: False
+    as-rpc: False
     name: bridge
     args: [bridge]
  - bridge.py:
-    rpc: False
+    auto-wireup: True
     name: bridge-watch
     args: [reactor]
  - tools.py:
+    auto-wireup: True
+    as-rpc: True
     name: tools
  - redis.hcl:
+    auto-wireup: True
  - mqtt.hcl:
+    auto-wireup: True
  - associative.py:
-    connect_args: False
-    rpc: False
+    auto-wireup: False
+    as-rpc: False
     args: [*scan_iface,--config,default.yaml,--ap-ssid,*ap_ssid,--ap-pass,*ap_pass]
- - create-ap:
-    connect_args: False
-    rpc: False
+ - create_ap:
     location: path
     args: [*ap_iface,-n,*ap_ssid,*ap_pass,--no-virt]
 

@@ -8,22 +8,17 @@ import consul
 import threading, queue
 import time
 import hashlib
+import os
+import sys
+sys.path.insert(0, "../")
+sys.path.insert(0, ".")
+import local_tools
 from lings import routeling
 from lings import routeling_basic_operations
 
-def lookup(service):
-    c = consul.Consul()
-    services = {k:v for (k,v) in c.agent.services().items() if k.startswith("_nomad")}
-    for k in services.keys():
-        if services[k]['Service'] == service:
-                service_ip,service_port = services[k]['Address'],services[k]['Port']
-                return service_ip,service_port
-                break
-    return None,None
-
 @pytest.fixture(scope='session')
 def redis_connection():
-    redis_ip,redis_port = lookup('redis')
+    redis_ip,redis_port = local_tools.lookup('redis')
     r = redis.StrictRedis(host=redis_ip, port=str(redis_port),decode_responses=True)
     yield r
 
@@ -97,3 +92,20 @@ def test_routing(redis_connection):
     # TODO fail on timeout
     t.join(4)
     assert not t.is_alive()
+
+def test_machine_scheduled_running(machine_yaml):
+
+    # pytest may be run insides tests directory
+    # or main directory of project
+    if not os.path.isfile(machine_yaml):
+        if os.path.isfile("../"+machine_yaml):
+            machine_yaml = "../"+machine_yaml
+    
+    assert os.path.isfile(machine_yaml)
+
+    machine_scheduled_components = local_tools.lookup_machine(machine_yaml,ignored_services=[])
+    
+    for k,v in machine_scheduled_components.items():
+        assert (k != "") and (v == "running")
+    
+    assert(set(list(machine_scheduled_components.values()))) == set(list(["running"]))

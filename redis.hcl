@@ -37,7 +37,7 @@ job "redis" {
         #bind 192.168.0.155\n
         rename-command FLUSHDB ''\n
         rename-command FLUSHALL ''\n
-        rename-command KEYS ''\n
+        #rename-command KEYS ''\n
         rename-command PEXPIRE ''\n
         #rename-command DEL ''\n
         #rename-command CONFIG '___.config.___.'\n

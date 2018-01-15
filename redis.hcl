@@ -32,14 +32,15 @@ job "redis" {
         dir /var/lib/redis\n
         save 120 1\n
         port {{ env \"NOMAD_PORT_redis_port\" }}\n
+        protected-mode no\n
         #bind 127.0.0.1\n
         #bind 192.168.0.155\n
         rename-command FLUSHDB ''\n
         rename-command FLUSHALL ''\n
-        #rename-command KEYS ''\n
+        rename-command KEYS ''\n
         rename-command PEXPIRE ''\n
         #rename-command DEL ''\n
-        rename-command CONFIG '___.config.___.'\n
+        #rename-command CONFIG '___.config.___.'\n
         rename-command SHUTDOWN ''\n
         rename-command BGREWRITEAOF ''\n
         rename-command BGSAVE ''\n

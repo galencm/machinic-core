@@ -11,7 +11,6 @@
     <include file = "bridge.py" name = "bridge-watch" wireup="true">
         <argument value = "reactor" />
     </include>
-    <include file = "tools.py" name = "tools" rpc = "true" wireup = "true" />
     <include file = "redis.hcl" wireup = "true" />
     <include file = "mqtt.hcl" wireup = "true" />
     <include file = "associative.py" wireup = "false"

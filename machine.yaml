@@ -18,10 +18,6 @@ includes:
     auto-wireup: True
     name: bridge-watch
     args: [reactor]
- - tools.py:
-    auto-wireup: True
-    as-rpc: True
-    name: tools
  - redis.hcl:
     auto-wireup: True
  - mqtt.hcl:

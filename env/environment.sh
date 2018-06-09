@@ -20,7 +20,7 @@ echo "$available"
 # add type for pip3, included inline
 
 pip3_type='
-### exact copy of bork project's pip.sh by Matthew Lyon     ###
+### exact copy of bork projects pip.sh by Matthew Lyon     ###
 ### except with 'pip3' replacing 'pip', see:                ###
 ### https://github.com/mattly/bork/blob/master/types/pip.sh ###
 
@@ -65,8 +65,8 @@ if [[ $available == 1 ]]
 fi
 
 #if pip3 type does not exist add
-if [ ! -f /usr/local/src/bork/types/pip33.sh ]; then
-    echo "$pip3_type" | sudo tee /usr/local/src/bork/types/pip33.sh
+if [ ! -f /usr/local/src/bork/types/pip3.sh ]; then
+    echo "$pip3_type" | sudo tee /usr/local/src/bork/types/pip3.sh
 fi
 
 if [[ $available == 0 ]]

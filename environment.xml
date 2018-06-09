@@ -49,6 +49,12 @@
             url="http://download.redis.io/releases/redis-4.0.6.tar.gz"
             command="make install"
             />
+    <!-- filesystem operations -->
+    <!--
+    <include name="~/some_dir" system="directory" />
+    <include name="/var/some_dir" system="directory" user="root"/>
+    -->
+    <include name="/var/lib/redis" system="directory" user="root"/>
 
     <script name = "../regenerate.sh">
         #!/bin/bash

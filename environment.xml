@@ -5,6 +5,8 @@
     <include name="foo" system="dnf" />
     <include name="foo" system="apt" />
     -->
+    <include name="mosquitto" system="dnf" />
+    <include name="mosquitto" system="apt" />
 
     <!-- python packages -->
     <!-- alphabetical would be useful -->

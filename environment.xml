@@ -7,6 +7,8 @@
     -->
     <include name="mosquitto" system="dnf" />
     <include name="mosquitto" system="apt" />
+    <include name="hostapd" system="dnf" />
+    <include name="hostapd" system="apt" />
 
     <!-- python packages -->
     <!-- alphabetical would be useful -->

@@ -7,6 +7,7 @@
 
 
 ok yum mosquitto
+ok yum hostapd
 
 
 which create_ap

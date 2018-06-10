@@ -8,6 +8,7 @@
 
 ok yum mosquitto
 ok yum hostapd
+ok yum gcc
 
 
 which create_ap

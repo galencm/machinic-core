@@ -9,6 +9,8 @@
     <include name="mosquitto" system="apt" />
     <include name="hostapd" system="dnf" />
     <include name="hostapd" system="apt" />
+    <include name="gcc" system="dnf" />
+    <include name="gcc" system="apt" />
 
     <!-- python packages -->
     <!-- alphabetical would be useful -->

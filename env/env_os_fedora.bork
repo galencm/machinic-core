@@ -18,7 +18,7 @@ available=$?
 if [[ $available == 1 ]]
     then
     echo create_ap not found installing
-    wget -P /tmp https://github.com/oblique/create_ap/archive/master.zip
+    wget -P /tmp https://github.com/oblique/create_ap/archive/master.zip --backups=1
 
     unzip /tmp/master.zip -d /tmp
     #installs to /usr/local/bin
@@ -36,7 +36,7 @@ available=$?
 if [[ $available == 1 ]]
     then
     echo redis-server not found installing
-    wget -P /tmp http://download.redis.io/releases/redis-4.0.6.tar.gz
+    wget -P /tmp http://download.redis.io/releases/redis-4.0.6.tar.gz --backups=1
 
     (cd /tmp ; tar xvf /tmp/redis-4.0.6.tar.gz)
     #installs to /usr/local/bin

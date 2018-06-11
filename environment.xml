@@ -9,6 +9,7 @@
     <include name="mosquitto" system="apt" />
     <include name="hostapd" system="dnf" />
     <include name="hostapd" system="apt" />
+    <include name="redhat-rpm-config" system="dnf" />
     <include name="gcc" system="dnf" />
     <include name="gcc" system="apt" />
 

@@ -10,6 +10,7 @@ ok yum mosquitto
 ok yum hostapd
 ok yum redhat-rpm-config
 ok yum gcc
+ok yum gcc-c++
 
 
 which create_ap

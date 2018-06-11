@@ -12,6 +12,8 @@
     <include name="redhat-rpm-config" system="dnf" />
     <include name="gcc" system="dnf" />
     <include name="gcc" system="apt" />
+    <include name="gcc-c++" system="dnf" />
+    <include name="g++" system="apt" />
 
     <!-- python packages -->
     <!-- alphabetical would be useful -->

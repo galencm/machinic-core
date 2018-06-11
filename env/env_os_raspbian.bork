@@ -9,6 +9,7 @@
 ok apt mosquitto
 ok apt hostapd
 ok apt gcc
+ok apt g++
 
 
 
